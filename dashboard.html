@@ -1,64 +1,707 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dashboard - National Prep Rwanda</title>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | National Prep Rwanda</title>
+
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#eef4ff}
-.sidebar{position:fixed;left:0;top:0;width:240px;height:100%;background:#0b5ed7;color:#fff;padding:20px}
-.sidebar h2{margin:0 0 20px}.sidebar a{display:block;color:#fff;text-decoration:none;padding:10px;border-radius:8px;margin:6px 0}
-.sidebar a:hover{background:#2b78ea}
-.main{margin-left:260px;padding:24px}
-.top{display:flex;justify-content:space-between;align-items:center}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:20px}
-.card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 3px 10px rgba(0,0,0,.1)}
-.subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}
-.sub{background:#fff;padding:16px;border-radius:10px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-button{padding:10px 16px;background:#0b5ed7;color:#fff;border:none;border-radius:8px;cursor:pointer}
-.dark{background:#111;color:#eee}.dark .card,.dark .sub{background:#222;color:#eee}
-@media(max-width:768px){.sidebar{position:relative;width:100%;height:auto}.main{margin-left:0}}
-</style></head>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+
+body{
+
+background:#f4f8ff;
+
+}
+
+
+
+header{
+
+background:linear-gradient(135deg,#0057d9,#00a8ff);
+
+color:white;
+
+padding:20px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+
+.logo{
+
+font-size:25px;
+
+font-weight:bold;
+
+}
+
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+margin-left:15px;
+
+}
+
+
+
+.logout{
+
+background:white;
+
+color:#0057d9;
+
+padding:8px 15px;
+
+border-radius:20px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+.hero{
+
+padding:40px 8%;
+
+background:white;
+
+}
+
+
+
+.hero h1{
+
+color:#0057d9;
+
+font-size:35px;
+
+}
+
+
+
+.hero p{
+
+margin-top:10px;
+
+font-size:18px;
+
+}
+
+
+
+
+.stats{
+
+width:90%;
+
+margin:30px auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(200px,1fr));
+
+gap:20px;
+
+}
+
+
+
+.stat{
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+
+
+.stat h2{
+
+color:#0057d9;
+
+font-size:35px;
+
+}
+
+
+
+
+
+.container{
+
+width:90%;
+
+margin:auto;
+
+}
+
+
+
+.title{
+
+color:#0057d9;
+
+margin:30px 0;
+
+}
+
+
+
+
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+
+gap:20px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+transition:.3s;
+
+text-align:center;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.card h2{
+
+font-size:35px;
+
+}
+
+
+
+.card a{
+
+text-decoration:none;
+
+color:#0057d9;
+
+}
+
+
+
+footer{
+
+background:#111;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+.dark{
+
+background:#111;
+
+color:white;
+
+}
+
+
+
+.dark .card,
+.dark .stat,
+.dark .hero{
+
+background:#222;
+
+color:white;
+
+}
+
+
+</style>
+
+
+</head>
+
+
 <body>
-<div class="sidebar">
-<h2>🇷🇼 National Prep</h2>
-<a href="#">🏠 Dashboard</a>
-<a href="#">📚 Subjects</a>
-<a href="#">📝 Quiz</a>
-<a href="#">📄 Past Papers</a>
-<a href="#">📖 Notes</a>
-<a href="#">🎥 Videos</a>
-<a href="#">🏆 Leaderboard</a>
-<a href="#">👤 Profile</a>
-<a href="login.html">🚪 Logout</a>
-</div>
-<div class="main">
-<div class="top"><div><h1>Welcome, Student</h1><p>Prepare for P6, S3 & S6 National Exams.</p></div><button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button></div>
 
-<div class="grid">
-<div class="card"><h3>Completed Exams</h3><h2>12</h2></div>
-<div class="card"><h3>Average Score</h3><h2>84%</h2></div>
-<div class="card"><h3>Current Rank</h3><h2>#15</h2></div>
-<div class="card"><h3>Certificates</h3><h2>3</h2></div>
+
+
+<header>
+
+
+<div class="logo">
+
+🇷🇼 National Prep Rwanda
+
 </div>
 
-<h2>Subjects</h2>
-<div class="subjects">
-<div class="sub">📘 Mathematics</div>
-<div class="sub">📖 English</div>
-<div class="sub">🇷🇼 Kinyarwanda</div>
-<div class="sub">⚡ Physics</div>
-<div class="sub">🧪 Chemistry</div>
-<div class="sub">🧬 Biology</div>
-<div class="sub">🌍 Geography</div>
-<div class="sub">🏛 History</div>
-<div class="sub">💼 Entrepreneurship</div>
-<div class="sub">💻 Computer Science</div>
+
+
+<nav>
+
+
+<a href="profile.html">
+Profile
+</a>
+
+
+<a href="leaderboard.html">
+Leaderboard
+</a>
+
+
+<span class="logout" onclick="logout()">
+
+Logout
+
+</span>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+
+Welcome, <span id="studentName">
+Student
+</span> 👋
+
+</h1>
+
+
+<p>
+
+Prepare yourself for National Examination
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<div class="stats">
+
+
+
+<div class="stat">
+
+<h2>
+10+
+</h2>
+
+<p>
+Subjects
+</p>
+
 </div>
 
-<div class="grid">
-<div class="card"><h3>Recent Activity</h3><ul><li>Math Quiz - 90%</li><li>Physics Mock - 80%</li></ul></div>
-<div class="card"><h3>Notifications</h3><p>New Chemistry mock exam available.</p></div>
-<div class="card"><h3>Quick Actions</h3><button>Start Quiz</button> <button>Past Papers</button></div>
+
+
+
+<div class="stat">
+
+<h2>
+200+
+</h2>
+
+<p>
+Past Papers
+</p>
+
 </div>
 
-<footer style="margin-top:30px;text-align:center">© 2026 National Prep Rwanda</footer>
+
+
+
+<div class="stat">
+
+<h2>
+1000+
+</h2>
+
+<p>
+Questions
+</p>
+
 </div>
-</body></html>
+
+
+
+
+<div class="stat">
+
+<h2>
+95%
+</h2>
+
+<p>
+Progress
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+<h2 class="title">
+
+🚀 Learning Center
+
+</h2>
+
+
+
+
+
+<div class="cards">
+
+
+
+
+
+<div class="card">
+
+<a href="subjects.html">
+
+<h2>
+📚
+</h2>
+
+<h3>
+Subjects
+</h3>
+
+<p>
+Study all subjects
+</p>
+
+</a>
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<a href="pastpapers.html">
+
+<h2>
+📄
+</h2>
+
+<h3>
+Past Papers
+</h3>
+
+<p>
+Practice previous exams
+</p>
+
+</a>
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<a href="notes.html">
+
+<h2>
+📖
+</h2>
+
+<h3>
+Notes
+</h3>
+
+<p>
+Read revision notes
+</p>
+
+</a>
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<a href="videos.html">
+
+<h2>
+🎥
+</h2>
+
+<h3>
+Videos
+</h3>
+
+<p>
+Watch lessons
+</p>
+
+</a>
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<a href="quiz.html">
+
+<h2>
+📝
+</h2>
+
+<h3>
+Mock Exam
+</h3>
+
+<p>
+Test your knowledge
+</p>
+
+</a>
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<a href="profile.html">
+
+<h2>
+👤
+</h2>
+
+<h3>
+My Profile
+</h3>
+
+<p>
+View performance
+</p>
+
+</a>
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<footer>
+
+<h3>
+National Prep Rwanda
+</h3>
+
+
+<p>
+Prepare Today • Pass Tomorrow
+</p>
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+// Protect dashboard
+
+
+let logged=
+localStorage.getItem("loggedIn");
+
+
+if(logged!="true"){
+
+window.location="login.html";
+
+}
+
+
+
+
+
+// Load student
+
+
+let student=
+JSON.parse(
+localStorage.getItem("student")
+);
+
+
+
+if(student){
+
+
+document.getElementById("studentName")
+.innerHTML=
+student.name;
+
+
+}
+
+
+
+
+
+
+
+function logout(){
+
+
+localStorage.removeItem(
+"loggedIn"
+);
+
+
+window.location="login.html";
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
