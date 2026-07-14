@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subjects | National Prep Rwanda</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f4f8ff;
+}
+
+header{
+background:#0057d9;
+color:white;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+}
+
+header h2{
+font-size:28px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+}
+
+.hero{
+background:linear-gradient(135deg,#0057d9,#4ea1ff);
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.search-box{
+width:90%;
+max-width:600px;
+margin:30px auto;
+}
+
+.search-box input{
+width:100%;
+padding:15px;
+font-size:18px;
+border-radius:10px;
+border:1px solid #ccc;
+outline:none;
+}
+
+.container{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding-bottom:50px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+padding:25px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+transition:.3s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.icon{
+font-size:60px;
+margin-bottom:15px;
+}
+
+.card h3{
+color:#0057d9;
+margin-bottom:10px;
+}
+
+.card p{
+color:#666;
+margin-bottom:20px;
+}
+
+button{
+background:#0057d9;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#003c99;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+.dark{
+background:#121212;
+color:white;
+}
+
+.dark .card{
+background:#222;
+color:white;
+}
+
+.dark input{
+background:#333;
+color:white;
+border:1px solid #666;
+}
+
+.toggle{
+cursor:pointer;
+font-size:20px;
+margin-left:20px;
+}
+
+@media(max-width:768px){
+header{
+flex-direction:column;
+gap:10px;
+}
+
+nav{
+text-align:center;
+}
+
+.hero h1{
+font-size:30px;
+}
+}
+</style>
+
+</head>
+<body>
+
+<header>
+
+<h2>🇷🇼 National Prep Rwanda</h2>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="subjects.html">Subjects</a>
+<a href="quiz.html">Quiz</a>
+<a href="leaderboard.html">Leaderboard</a>
+
+<span class="toggle" onclick="darkMode()">🌙</span>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Choose Your Subject</h1>
+
+<p>Study Notes • Quizzes • Past Papers • Mock Exams</p>
+
+</section>
+
+<div class="search-box">
+
+<input type="text" id="search" placeholder="Search Subject..." onkeyup="searchSubjects()">
+
+</div>
+
+<div class="container" id="subjects">
+
+<div class="card">
+<div class="icon">📘</div>
+<h3>Mathematics</h3>
+<p>Lessons, Practice Questions and Past Papers</p>
+<button onclick="openSubject('Mathematics')">Open Subject</button>
+</div>
+
+<div class="card">
+<div class="icon">📖</div>
+<h3>English</h3>
+<p>Grammar, Reading and Writing</p>
+<button onclick="openSubject('English')">Open Subject</button>
+</div>
+
+<div class="card">
+<div class="icon">🇷🇼</div>
+<h3>Kinyarwanda</h3>
+<p>National Curriculum Resources</p>
+<button onclick="openSubject('Kinyarwanda')">Open Subject</button>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Physics</h3>
+<p>Concepts and Mock Exams</p>
+<button onclick="openSubject('Physics')">Open Subject</button>
+</div>
+
+<div class="card">
+<div class="icon">🧪</div>
+<h3>Chemistry</h3>
+<p>Experiments and Revision</p>
+<button onclick="openSubject('Chemistry')">Open Subject</button>
+</div>
+
+<div class="card">
+<div class="icon">🧬</div>
+<h3>Biology</h3>
+<p>Study Notes and Practice Tests</p>
+<button onclick="openSubject('Biology')">Open Subject</button>
+</div>
+
+<div class="card">
+<div class="icon">🌍</div>
+<h3>Geography</h3>
+<p>Maps and National Exams</p>
+<button onclick="openSubject('Geography')">Open Subject</button>
+</div>
+
+<div class="card">
+<div class="icon">🏛</div>
+<h3>History</h3>
+<p>Revision Materials</p>
+<button onclick="openSubject('History')">Open Subject</button>
+</div>
+
+<div class="card">
+<div class="icon">💼</div>
+<h3>Entrepreneurship</h3>
+<p>Business Skills and Activities</p>
+<button onclick="openSubject('Entrepreneurship')">Open Subject</button>
+</div>
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Computer Science</h3>
+<p>Programming and ICT Skills</p>
+<button onclick="openSubject('Computer Science')">Open Subject</button>
+</div>
+
+</div>
+
+<footer>
+
+<h3>National Prep Rwanda</h3>
+
+<p>Prepare Today • Pass Tomorrow</p>
+
+<p>© 2026 All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+function darkMode(){
+document.body.classList.toggle("dark");
+}
+
+function searchSubjects(){
+
+let input=document.getElementById("search").value.toUpperCase();
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let title=card.querySelector("h3").innerText.toUpperCase();
+
+card.style.display=title.includes(input)?"block":"none";
+
+});
+
+}
+
+function openSubject(subject){
+
+window.location="subject.html?subject="+encodeURIComponent(subject);
+
+}
+
+</script>
+
+</body>
+</html>
